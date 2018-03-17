@@ -21,7 +21,7 @@ Simply include the imReveal js and css files into your page. Your two image shou
 </script>
 ```
 ## Demo
-A live demo can be found [here](file:///home/oliver/programming-projekte/imReveal/demo.html)
+A live demo can be found [here](https://oweissbarth.de/imReveal/demo.html)
 
 
 ## Troubleshooting
