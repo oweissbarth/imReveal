@@ -37,6 +37,8 @@ class imReveal{
         this.right.addEventListener("dragstart", e => e.preventDefault());
         this.left.addEventListener("dragstart", e => e.preventDefault());
 
+        window.addEventListener("resize", this.reinit.bind(this));
+
     }
 
     private addClasses(){
@@ -76,5 +78,9 @@ class imReveal{
     private wrap(element: HTMLElement, wrapper: HTMLElement){
         element.parentNode.insertBefore(wrapper, element);
         wrapper.appendChild(element);
+    }
+
+    reinit(){
+        this.containerLeft = this.container.getBoundingClientRect().left;
     }
 }
