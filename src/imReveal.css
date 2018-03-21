@@ -29,7 +29,7 @@
         top: calc(50% - 25px);
         left: calc(50% - 25px);
         cursor: col-resize;
-        background: url(../img/handle.svg);
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="isolation:isolate" viewBox="0 0 256 256" width="256" height="256"><defs><clipPath id="_clipPath_v5PZjuIPefZEJSreX4fSO8ZxFwHajDBI"><rect width="256" height="256"/></clipPath></defs><g clip-path="url(%23_clipPath_v5PZjuIPefZEJSreX4fSO8ZxFwHajDBI)"><path d=" M 0 128 C 0 57.355 57.355 0 128 0 C 198.645 0 256 57.355 256 128 C 256 198.645 198.645 256 128 256 C 57.355 256 0 198.645 0 128 Z  M 143.9 194 L 195.8 124.5 L 144.4 62.6 C 141.8 59.5 140.6 55.6 141 51.6 C 141.3 47.7 143.3 44 146.3 41.5 C 149.4 38.9 153.3 37.7 157.3 38.1 C 161.2 38.4 164.9 40.4 167.4 43.4 L 234 123.5 L 167.9 212 C 165.5 215.2 162 217.3 158.1 217.8 C 154.1 218.4 150.1 217.4 146.9 215 C 143.7 212.6 141.6 209.1 141.1 205.2 C 140.5 201.2 141.5 197.2 143.9 194 M 90.4 43.4 C 92.9 40.4 96.6 38.4 100.5 38.1 C 104.5 37.7 108.4 38.9 111.5 41.5 C 114.5 44 116.5 47.7 116.8 51.6 C 117.2 55.6 116 59.5 113.4 62.6 L 62 124.5 L 113.9 194 C 116.3 197.2 117.3 201.2 116.7 205.2 C 116.2 209.1 114.1 212.6 110.9 215 C 107.7 217.4 103.7 218.4 99.7 217.8 C 95.8 217.3 92.3 215.2 89.9 212 L 23.8 123.5 L 90.4 43.4 M 143.9 194 Z " fill-rule="evenodd" fill="rgb(238,238,238)"/></g></svg>');
         background-size: cover;
     }
     
