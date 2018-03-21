@@ -1,21 +1,29 @@
 class imReveal{
     dragging: boolean    
     containerLeft: number
+    width: number
     offset: number
     container: HTMLElement
+    fffWrapper: HTMLElement
     slider: HTMLElement
     right: HTMLElement
     left: HTMLElement
     sliderHandle: HTMLElement
 
 
+
     constructor(container: HTMLElement){
         this.dragging = false;
         this.container = container;
 
+        this.fffWrapper = document.createElement("div");
+        this.wrap(this.container, this.fffWrapper);
+        this.container.style.overflow = "visible";
+        this.fffWrapper.style.overflow = "hidden";
+
         this.left = container.getElementsByTagName("img")[0];
         this.right = container.getElementsByTagName("img")[1];
-        this.containerLeft = container.getBoundingClientRect().left;
+        this.reinit();
         this.slider = document.createElement("div");
         this.wrap(this.right, this.slider);
 
@@ -30,6 +38,7 @@ class imReveal{
         this.sliderHandle.addEventListener("mousedown", this.start.bind(this))
         this.container.addEventListener("mousemove", this.move.bind(this))
         this.container.addEventListener("mouseup", this.stop.bind(this))
+        this.container.addEventListener("mouseenter", ()=>{})
         this.container.addEventListener("mouseleave", this.stop.bind(this))
         
         //prevent dragging
@@ -51,7 +60,7 @@ class imReveal{
         if(! this.dragging){
             return;
         }
-        this.offset = this.getXOffset(e);
+        this.offset = Math.min(Math.max(this.getXOffset(e), 0), this.width);
         window.requestAnimationFrame(this.update.bind(this));
     }
     
@@ -81,6 +90,7 @@ class imReveal{
     }
 
     reinit(){
+        this.width = this.container.clientWidth;
         this.containerLeft = this.container.getBoundingClientRect().left;
     }
 }

@@ -8,10 +8,6 @@
         position: relative;
         top: 0;
         left: 0;
-        -moz-user-select: -moz-none;
-        -khtml-user-select: none;
-        -webkit-user-select: none;
-        -o-user-select: none;
         user-select: none;
     }
     
@@ -33,6 +29,8 @@
         top: calc(50% - 25px);
         left: calc(50% - 25px);
         cursor: col-resize;
+        background: url(../img/handle.svg);
+        background-size: cover;
     }
     
     
