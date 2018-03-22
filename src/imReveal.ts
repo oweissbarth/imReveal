@@ -35,11 +35,19 @@ class imReveal{
 
 
     private registerEventListeners(){
-        this.sliderHandle.addEventListener("mousedown", this.start.bind(this))
-        this.container.addEventListener("mousemove", this.move.bind(this))
-        this.container.addEventListener("mouseup", this.stop.bind(this))
-        this.container.addEventListener("mouseenter", ()=>{})
-        this.container.addEventListener("mouseleave", this.stop.bind(this))
+        /* Desktop experience */
+        this.sliderHandle.addEventListener("mousedown", this.start.bind(this));
+        this.container.addEventListener("mousemove", this.move.bind(this));
+        this.container.addEventListener("mouseup", this.stop.bind(this));
+        this.container.addEventListener("mouseenter", ()=>{});
+        this.container.addEventListener("mouseleave", this.stop.bind(this));
+
+        /* Touch experience*/
+        this.sliderHandle.addEventListener("touchstart", this.start.bind(this), {passive: true});
+        this.container.addEventListener("touchmove", this.move.bind(this), {passive: true});
+        this.container.addEventListener("touchend", this.stop.bind(this));
+        this.container.addEventListener("touchcancel", this.stop.bind(this));
+
         
         //prevent dragging
         this.container.addEventListener("dragstart", e => e.preventDefault());
@@ -80,8 +88,12 @@ class imReveal{
         this.dragging = false;
     }
     
-    private getXOffset(e: MouseEvent): number{
-        return e.clientX - this.containerLeft;
+    private getXOffset(e: MouseEvent|TouchEvent): number{
+        if(e instanceof TouchEvent){
+            return e.touches[0].clientX - this.containerLeft;
+        }else{
+            return e.clientX - this.containerLeft;
+        }
     }
 
     private wrap(element: HTMLElement, wrapper: HTMLElement){
