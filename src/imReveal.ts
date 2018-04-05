@@ -1,5 +1,5 @@
 class imReveal{
-    dragging: boolean    
+    dragging: boolean
     containerLeft: number
     width: number
     offset: number
@@ -48,7 +48,7 @@ class imReveal{
         this.container.addEventListener("touchend", this.stop.bind(this));
         this.container.addEventListener("touchcancel", this.stop.bind(this));
 
-        
+
         //prevent dragging
         this.container.addEventListener("dragstart", e => e.preventDefault());
         this.right.addEventListener("dragstart", e => e.preventDefault());
@@ -63,7 +63,7 @@ class imReveal{
         this.slider.classList.add("imReveal-slider");
         this.sliderHandle.classList.add("imReveal-slider-handle");
     }
-    
+
     private move(e: MouseEvent){
         if(! this.dragging){
             return;
@@ -71,7 +71,7 @@ class imReveal{
         this.offset = Math.min(Math.max(this.getXOffset(e), 0), this.width);
         window.requestAnimationFrame(this.update.bind(this));
     }
-    
+
     private update(){
         this.slider.style.left = this.offset + "px"
         this.right.style.left = -this.offset + "px";
@@ -79,20 +79,20 @@ class imReveal{
         if( this.dragging)
             window.requestAnimationFrame(this.update.bind(this));
     }
-    
+
     private start(){
         this.dragging = true;
     }
-    
+
     private stop(){
         this.dragging = false;
     }
-    
-    private getXOffset(e: MouseEvent|TouchEvent): number{
-        if(e instanceof TouchEvent){
+
+    private getXOffset(e: any): number{
+        if(typeof TouchEvent != "undefined" && e instanceof TouchEvent){
             return e.touches[0].clientX - this.containerLeft;
         }else{
-            return e.clientX - this.containerLeft;
+            return (<MouseEvent>e).clientX - this.containerLeft;
         }
     }
 
