@@ -1,6 +1,6 @@
 {
   "name": "imreveal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A bit of js to show the before and after of two images",
   "dependencies": {},
   "devDependencies": {
