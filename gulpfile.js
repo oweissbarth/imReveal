@@ -25,6 +25,4 @@ gulp.task('styles', function(){
         .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('default', function() {
-    gulp.start('typescript', 'styles');
-});
+gulp.task('default', gulp.parallel('typescript', 'styles'));
