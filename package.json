@@ -5,12 +5,12 @@
   "dependencies": {},
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-clean-css": "^3.10.0",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
     "gulp-minify": "^3.1.0",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-typescript": "^5.0.1",
-    "typescript": "^3.8.3"
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "typescript": "^4.0.2"
   },
   "repository": {
     "type": "git",
